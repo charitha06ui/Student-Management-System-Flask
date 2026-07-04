@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Student
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2 class="text-center mb-4">Edit Student</h2>
+
+    <form method="POST">
+
+        <!-- Name -->
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+
+            <input
+                type="text"
+                class="form-control"
+                name="name"
+                value="{{ student.name }}"
+                pattern="[A-Za-z ]+"
+                title="Only letters and spaces are allowed"
+                placeholder="Enter Full Name"
+                required>
+        </div>
+
+        <!-- Age -->
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+
+            <input
+                type="number"
+                class="form-control"
+                name="age"
+                value="{{ student.age }}"
+                min="16"
+                max="100"
+                placeholder="Enter Age"
+                required>
+        </div>
+
+        <!-- Gender -->
+        <div class="mb-3">
+            <label class="form-label">Gender</label>
+
+            <select class="form-select" name="gender" required>
+
+                <option value="Male"
+                    {% if student.gender == "Male" %}selected{% endif %}>
+                    Male
+                </option>
+
+                <option value="Female"
+                    {% if student.gender == "Female" %}selected{% endif %}>
+                    Female
+                </option>
+
+            </select>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+
+            <input
+                type="email"
+                class="form-control"
+                name="email"
+                value="{{ student.email }}"
+                placeholder="example@gmail.com"
+                required>
+        </div>
+
+        <!-- Course -->
+        <div class="mb-3">
+            <label class="form-label">Course</label>
+
+            <input
+                type="text"
+                class="form-control"
+                name="course"
+                value="{{ student.course }}"
+                placeholder="Enter Course Name"
+                required>
+        </div>
+
+        <!-- Phone -->
+        <div class="mb-3">
+            <label class="form-label">Phone Number</label>
+
+            <input
+                type="tel"
+                class="form-control"
+                name="phone"
+                value="{{ student.phone }}"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                title="Phone number must contain exactly 10 digits"
+                placeholder="Enter 10-digit Phone Number"
+                required>
+        </div>
+
+        <!-- Address -->
+        <div class="mb-3">
+            <label class="form-label">Address</label>
+
+            <textarea
+                class="form-control"
+                name="address"
+                rows="3"
+                placeholder="Enter Address">{{ student.address }}</textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div class="d-flex gap-2">
+
+            <button type="submit" class="btn btn-warning">
+                Update Student
+            </button>
+
+            <a href="/students" class="btn btn-secondary">
+                Cancel
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

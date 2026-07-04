@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center mb-5">
+    <i class="bi bi-mortarboard-fill me-2"></i>
+    Student Management System
+</h1>
+
+<div class="row">
+
+    <div class="col-md-4">
+
+        <div class="card text-center shadow">
+
+            <div class="card-body">
+
+                <h5>Total Students</h5>
+
+                <h1 class="text-primary">
+                    {{ total_students }}
+                </h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card text-center shadow">
+
+            <div class="card-body">
+
+                <h5>Male Students</h5>
+
+                <h1 class="text-success">
+                    {{ male_students }}
+                </h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card text-center shadow">
+
+            <div class="card-body">
+
+                <h5>Female Students</h5>
+
+                <h1 class="text-danger">
+                    {{ female_students }}
+                </h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="text-center mt-5">
+
+    <a href="/add" class="btn btn-success btn-lg">
+        <i class="bi bi-person-plus-fill"></i> Add Student
+    </a>
+
+    <a href="/students" class="btn btn-primary btn-lg">
+        <i class="bi bi-table"></i> View Students
+    </a>
+
+</div>
+
+{% endblock %}
