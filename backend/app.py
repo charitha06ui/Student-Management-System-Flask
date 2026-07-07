@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 from flask import Flask, render_template, request, redirect, url_for, flash, session, send_file
 from sqlalchemy import or_
 from models import db, Student
-from flask import send_file
 from openpyxl import Workbook
 from io import BytesIO
 
@@ -66,9 +65,9 @@ def login():
 @app.route("/logout")
 def logout():
 
-    session.pop("admin", None)
+    session.clear()
 
-    flash("Logged out successfully!", "warning")
+    flash("Logged out successfully!", "info")
 
     return redirect(url_for("login"))
 
@@ -84,12 +83,11 @@ def home():
     female_students = Student.query.filter_by(gender="Female").count()
 
     return render_template(
-        "index.html",
-        total_students=total_students,
-        male_students=male_students,
-        female_students=female_students
-    )
-
+    "index.html",
+    total_students=total_students,
+    male_students=male_students,
+    female_students=female_students
+)
 
 # ---------------- ADD STUDENT ----------------
 @app.route("/add", methods=["GET", "POST"])
@@ -164,13 +162,6 @@ def view_students():
         students=students
     )
 
-    students = Student.query.all()
-
-    return render_template(
-        "view_students.html",
-        students=students
-    )
-
 
 # ---------------- SEARCH STUDENT ----------------
 @app.route("/search")
@@ -178,21 +169,6 @@ def search_student():
 
     if not login_required():
         return redirect(url_for("login"))
-
-    query = request.args.get("query", "")
-
-    students = Student.query.filter(
-        or_(
-            Student.name.ilike(f"%{query}%"),
-            Student.email.ilike(f"%{query}%"),
-            Student.course.ilike(f"%{query}%")
-        )
-    ).all()
-
-    return render_template(
-        "view_students.html",
-        students=students
-    )
 
     query = request.args.get("query", "")
 
