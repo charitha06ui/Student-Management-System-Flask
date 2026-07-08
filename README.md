@@ -1,6 +1,6 @@
 # 🎓 Student Management System
 
-A Full Stack Student Management System built using **Python, Flask, MySQL, HTML, CSS, Bootstrap, and SQLAlchemy**. This project allows administrators to manage student records efficiently through a simple and responsive web interface.
+A full-stack Student Management System developed using **Python, Flask, MySQL, HTML, CSS, JavaScript, and Bootstrap**. This application allows administrators to manage student records efficiently through CRUD (Create, Read, Update, Delete) operations.
 
 ---
 
@@ -15,7 +15,7 @@ A Full Stack Student Management System built using **Python, Flask, MySQL, HTML,
 - 🗑️ Delete Student Records
 - ✅ Form Validation
 - 📧 Duplicate Email Validation
-- 📁 Export Student Data to Excel
+- 📤 Export Student Data to Excel
 - 💬 Flash Messages for User Feedback
 - 🔒 Protected Routes (Login Required)
 - 📱 Responsive User Interface using Bootstrap
@@ -28,181 +28,99 @@ A Full Stack Student Management System built using **Python, Flask, MySQL, HTML,
 - HTML5
 - CSS3
 - Bootstrap 5
-- Bootstrap Icons
-- Jinja2 Templates
+- JavaScript
 
 ### Backend
-- Python 3
+- Python
 - Flask
-- SQLAlchemy
 
 ### Database
 - MySQL
-
-### Libraries
-- Flask
-- Flask-SQLAlchemy
-- PyMySQL
-- python-dotenv
-- openpyxl
 
 ---
 
 ## 📂 Project Structure
 
-```
-Student-Management-System/
-│
-├── backend/
+```text
+Student-Management-System-Flask/
+│── backend/
 │   ├── app.py
 │   ├── models.py
-│   ├── .env
 │   ├── requirements.txt
 │   └── .venv/
 │
-├── frontend/
+│── frontend/
 │   ├── templates/
-│   │   ├── base.html
-│   │   ├── login.html
-│   │   ├── index.html
-│   │   ├── add_student.html
-│   │   ├── edit_student.html
-│   │   └── view_students.html
-│   │
-│   └── static/
-│       ├── css/
-│       ├── js/
-│       └── images/
+│   ├── static/
 │
-└── README.md
+│── screenshots/
+│── README.md
 ```
 
 ---
 
 ## ⚙️ Installation
 
-### Clone the Repository
+### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/student-management-system.git
+git clone git@github.com:charitha06ui/Student-Management-System-Flask.git
 ```
 
-### Navigate to Project
+### Go to the project folder
 
 ```bash
-cd student-management-system/backend
+cd Student-Management-System-Flask
 ```
 
-### Create Virtual Environment
+### Install dependencies
 
 ```bash
-python -m venv .venv
+pip install -r backend/requirements.txt
 ```
 
-### Activate Virtual Environment
-
-#### Windows
+### Run the application
 
 ```bash
-.venv\Scripts\activate
-```
-
-#### macOS/Linux
-
-```bash
-source .venv/bin/activate
-```
-
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## 🗄️ Configure Database
-
-Create a `.env` file inside the `backend` folder.
-
-```env
-DB_USER=root
-DB_PASSWORD=your_password
-DB_HOST=localhost
-DB_NAME=student_db
-```
-
----
-
-## ▶️ Run the Application
-
-```bash
+cd backend
 python app.py
 ```
-
-Open your browser:
-
-```
-http://127.0.0.1:5000
-```
-
----
-
-## 🔑 Admin Login
-
-Default Credentials
-
-**Username**
-
-```
-admin
-```
-
-**Password**
-
-```
-admin123
-```
-
----
-
-## 📊 Modules
-
-- Dashboard
-- Login
-- Logout
-- Add Student
-- View Students
-- Search Student
-- Edit Student
-- Delete Student
-- Export to Excel
 
 ---
 
 ## 📸 Screenshots
 
-Add screenshots here after uploading images.
+### 🏠 Home Page
+![Home](screenshots/home.png)
 
-Example:
+### ➕ Add Student
+![Add Student](screenshots/add-student.png)
 
-- Login Page
-- Dashboard
-- Add Student
-- View Students
-- Edit Student
+### 📋 View Students
+![View Students](screenshots/view-students.png)
+
+### ✏️ Edit Student
+![Edit Student](screenshots/edit-student.png)
+
+### 🗑️ Delete Student
+![Delete Student](screenshots/delete-student.png)
+
+### 📤 Export to Excel
+![Export Excel](screenshots/export-excel.png)
+
+### 🚪 Logout
+![Logout](screenshots/logout.png)
 
 ---
 
-## 🔮 Future Enhancements
+## 🎯 Future Improvements
 
-- PDF Export
-- Pagination
-- Course Management
-- Student Profile Photo
+- Student Photo Upload
+- Role-Based Authentication
 - Email Notifications
-- User Roles
-- Cloud Deployment
+- REST API Integration
+- Pagination
+- Dark Mode
 
 ---
 
@@ -210,12 +128,8 @@ Example:
 
 **Balasubramanyam Charitha**
 
-B.Tech Student
-
-Aspiring Full Stack Python Developer
+- GitHub: https://github.com/charitha06ui
 
 ---
 
-## 📜 License
-
-This project is developed for learning purposes and personal portfolio.
+⭐ If you like this project, consider giving it a star on GitHub!
